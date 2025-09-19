@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmConnect | Farmer Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7fafc;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #00a46c 0%, #008a5e 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card {
+            border-left: 4px solid #00a46c;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i data-feather="sun" class="w-6 h-6"></i>
+                <h1 class="text-xl font-bold">FarmConnect</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#" class="hover:text-green-100 transition">Dashboard</a>
+                <a href="#" class="hover:text-green-100 transition">Marketplace</a>
+                <a href="#" class="hover:text-green-100 transition">Resources</a>
+                <a href="#" class="hover:text-green-100 transition">Community</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <div class="relative">
+                    <i data-feather="bell" class="w-5 h-5 cursor-pointer hover:text-green-100"></i>
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <img src="http://static.photos/people/200x200/42" alt="Profile" class="w-8 h-8 rounded-full object-cover">
+                    <span class="hidden md:inline">John Farmer</span>
+                    <i data-feather="chevron-down" class="w-4 h-4"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Welcome Section -->
+        <section class="mb-10" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold text-gray-800">Welcome back, John!</h2>
+                    <p class="text-gray-600">Here's what's happening with your farm today</p>
+                </div>
+                <button class="mt-4 md:mt-0 bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg flex items-center space-x-2 transition">
+                    <i data-feather="plus" class="w-4 h-4"></i>
+                    <span>Add New Listing</span>
+                </button>
+            </div>
+            
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-500 text-sm">Active Listings</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-1">12</h3>
+                        </div>
+                        <div class="p-3 rounded-full bg-green-50 text-green-600">
+                            <i data-feather="shopping-bag" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <p class="text-green-600 text-sm mt-2">+2 from last week</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-500 text-sm">Pending Orders</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-1">5</h3>
+                        </div>
+                        <div class="p-3 rounded-full bg-blue-50 text-blue-600">
+                            <i data-feather="truck" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <p class="text-blue-600 text-sm mt-2">+1 from yesterday</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-500 text-sm">Monthly Revenue</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-1">$3,245</h3>
+                        </div>
+                        <div class="p-3 rounded-full bg-purple-50 text-purple-600">
+                            <i data-feather="dollar-sign" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <p class="text-purple-600 text-sm mt-2">12% from last month</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm stat-card card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="text-gray-500 text-sm">Messages</p>
+                            <h3 class="text-2xl font-bold text-gray-800 mt-1">8</h3>
+                        </div>
+                        <div class="p-3 rounded-full bg-yellow-50 text-yellow-600">
+                            <i data-feather="mail" class="w-5 h-5"></i>
+                        </div>
+                    </div>
+                    <p class="text-yellow-600 text-sm mt-2">3 unread</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Actions -->
+        <section class="mb-10" data-aos="fade-up">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Quick Actions</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center text-center card-hover">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600 mb-2">
+                        <i data-feather="plus-circle" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-sm font-medium">Add Product</span>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center text-center card-hover">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600 mb-2">
+                        <i data-feather="file-text" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-sm font-medium">View Reports</span>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center text-center card-hover">
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600 mb-2">
+                        <i data-feather="users" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-sm font-medium">Customers</span>
+                </a>
+                <a href="#" class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center text-center card-hover">
+                    <div class="p-3 rounded-full bg-yellow-100 text-yellow-600 mb-2">
+                        <i data-feather="settings" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-sm font-medium">Settings</span>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Recent Orders -->
+        <section class="mb-10" data-aos="fade-up">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">Recent Orders</h3>
+                <a href="#" class="text-green-600 text-sm font-medium hover:underline">View All</a>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Order ID</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Products</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#FC-1001</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">FreshMart</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Tomatoes (50kg), Carrots (30kg)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Shipped</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$245.00</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 15, 2023</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#FC-1000</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Organic Grocers</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Potatoes (100kg), Onions (40kg)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Processing</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$320.50</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 14, 2023</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">#FC-999</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Farmers Co-op</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Lettuce (20kg), Cucumbers (15kg)</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Paid</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$175.75</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">May 12, 2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Inventory Alerts -->
+        <section data-aos="fade-up">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-semibold text-gray-800">Inventory Alerts</h3>
+                <a href="#" class="text-green-600 text-sm font-medium hover:underline">Manage Inventory</a>
+            </div>
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Product</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="http://static.photos/food/200x200/1" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Tomatoes</div>
+                                            <div class="text-sm text-gray-500">Organic</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Vegetables</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">15kg</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Low Stock</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-green-600 hover:text-green-900">Restock</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="http://static.photos/food/200x200/2" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Carrots</div>
+                                            <div class="text-sm text-gray-500">Organic</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Vegetables</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8kg</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">Low Stock</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-green-600 hover:text-green-900">Restock</a>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="flex-shrink-0 h-10 w-10">
+                                            <img class="h-10 w-10 rounded-full" src="http://static.photos/food/200x200/3" alt="">
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-medium text-gray-900">Potatoes</div>
+                                            <div class="text-sm text-gray-500">Organic</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Vegetables</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25kg</td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">Medium Stock</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <a href="#" class="text-green-600 hover:text-green-900">Monitor</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">FarmConnect</h4>
+                    <p class="text-gray-400">Connecting farmers directly to buyers for fair and sustainable agriculture.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Marketplace</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Resources</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Help Center</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">FAQs</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i data-feather="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 mt-4">Subscribe to our newsletter</p>
+                    <div class="flex mt-2">
+                        <input type="email" placeholder="Your email" class="px-3 py-2 bg-gray-700 text-white rounded-l focus:outline-none w-full">
+                        <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r transition">
+                            <i data-feather="send" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2023 FarmConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        feather.replace();
+    </script>
+</body>
+</html>
